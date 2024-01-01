@@ -2,7 +2,10 @@ import type { PluginSettings } from './types'
 
 import ChatGPTPreamble from './preambles/chatgpt'
 import models from './services/openai/models'
-import { OPEN_AI_DEFAULT_MODEL_NAME } from './services/openai/constants'
+import {
+  OPEN_AI_BASE_URL,
+  OPEN_AI_DEFAULT_MODEL_NAME
+} from './services/openai/constants'
 
 export const PLUGIN_NAME = 'AI Research Assistant'
 export const PLUGIN_PREFIX = 'ai-research-assistant'

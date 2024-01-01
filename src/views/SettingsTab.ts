@@ -11,7 +11,7 @@ import {
   PLUGIN_PREFIX,
   USER_HANDLE
 } from '../constants'
-import { OPEN_AI_API_KEY_URL } from '../services/openai/constants'
+import { OPEN_AI_API_KEY_URL, OPEN_AI_BASE_URL } from '../services/openai/constants'
 
 import type ObsidianAIResearchAssistant from '../main'
 import type { OpenAIModel } from '../services/openai/types'
@@ -129,6 +129,22 @@ export default class SettingsTab extends PluginSettingTab {
         })
       })
     }
+    // Setting for OpenAI URL     
+    new Setting(containerEl)
+      .setName('OpenAI URL')
+      .setDesc('The URL for your OpenAI API. If you need to change it, update this setting and click "Save".')
+      .addText((text) => {
+        text
+          .setPlaceholder(OPEN_AI_BASE_URL)
+          .setValue(this.plugin.settings.openAiUrl)
+          .onChange(async (value) => {
+            this.plugin.settings.openAiUrl = value
+
+            await this.plugin.saveSettings()
+
+            await this.resetPluginView()
+          })
+      })
 
     new Setting(containerEl)
       .setName('Default model')

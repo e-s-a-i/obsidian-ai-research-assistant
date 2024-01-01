@@ -29,7 +29,7 @@ export interface PluginSettings {
 
   openAiApiKey: string
   apiKeySaved: boolean
-
+  openAiUrl: string
   defaultModel: OpenAIModel
   defaultPreamble?: string
   defaultMaxTokens?: number

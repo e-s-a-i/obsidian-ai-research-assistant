@@ -29,6 +29,7 @@ export const PLUGIN_SETTINGS: PluginSettings = {
   debugMode: false,
   openAiApiKey: '',
   apiKeySaved: false,
+  openAiUrl: OPEN_AI_BASE_URL,
   defaultTokenBuffer: DEFAULT_TOKEN_BUFFER,
   defaultMaxTokens: DEFAULT_MAX_TOKENS,
   defaultModel: OPEN_AI_DEFAULT_MODEL_NAME,
